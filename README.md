@@ -6,7 +6,7 @@
 
 #
 
-# This project was written in the C++ language, and were developed in a Linux-POSIX environment to be run with the use of an input text file, containing necessary information for execution
+# This project was written in the C++ language, and was developed in a Linux-POSIX environment to be run with the use of an specifically-formatted input text file, containing necessary information for execution
 
 #
 
