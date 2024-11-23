@@ -27,7 +27,6 @@ int main()
     int baseIndex = 0;
 
     // input reading algorithm: every fourth input from the file is a number to be kept in the array
-
     // note: first two numbers are number of processes/resources which, like total resource instances,
     //       is not in the table, and so can be assumed as constants of 5 and 3, so these indices are not used
     while (!file.eof())

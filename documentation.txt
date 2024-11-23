@@ -39,4 +39,4 @@ broken due to no progress being made toward process servicing, the system state 
 satisfying safe sequence. This is stated/printed, with no accompanying sequence data. 
 
 That is the full documentation of the implementation of this assignment. For further instruction
-specific comments, see code. 
+specific comments, see code.  

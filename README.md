@@ -18,4 +18,4 @@
 
 #
 
-# This project does not require any user inputs, and should run correctly once being executed, successfully displaying and formatting the file input information and determining the system state
+# This project does not require the user to provide any inputs, and should run correctly once being executed, successfully displaying and formatting the file input information and determining the system state
