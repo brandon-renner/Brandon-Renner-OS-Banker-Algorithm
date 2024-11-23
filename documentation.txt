@@ -1,0 +1,42 @@
+    The first step of this project was designing a way to accept input from a file containing the information
+for the data structures in the banker's algorithm. No format for this file was specified, so it was up to myself
+to format and implement the file so that it works correctly. To do this, the input file was designed so that every
+fourth token on every line contained the integer that was actually important for the data structure, while the 
+rest of the line simply specified where exactly that number should go, which is something already known. So my
+method for accepting input was simple take every fourth token and place it in an array of integers. These values 
+can then be placed, from this single dimension array containing all numbers, into the data structure that requires 
+it. This is accomplished because, as I said before, where the numbers should go is already known. And because the 
+numbers where already in proper order in the input file, assigning them to specific structures was as simple as 
+iterating through a specific range of the number array. This results in four data structures being produced: three
+multi-dimensional arrays(Allocated, Max, Need) and one normal array(Available).
+
+    The second step of this project was the actual implementation of the bankers algorithm with the use of these 
+data structures described above. This is done by first creating a view more tracking/recording elements such as: 
+a boolean array tracking the status of each process(is it finished), an integer array storing the safe sequence as 
+it is created, two boolean variables to determine if the algorithm is done overall(done) or a process can be serviced 
+with the currently available resources(track), and a single integer variable to exit the loop if 20 iterations end 
+happening(means the system is unsafe). With all of this, the implementation goes as follows. If the current state of
+a process to check is not finished, compare its need vector with the available resources. If all elements of need 
+are less than available, then the process can be serviced, the process's currently allocated reosurces are returned
+to the available resources(symbolizes the process being serviced and terminating), the process's state index in the 
+finish array is set to true, and the sequence array has the process's number added to it. If all the elements of a  
+process's need vector are not less than available, then we skip the service symbolizing steps, resources are not  
+returned, state is not changed, and the safe sequence is not affected. The next iteration is simply continued. If 
+the current state of the process checked in the next iteration is finished(true), we do not need to check for 
+servicing, but we do need to check if all the processes are finished. So iterating over the finish array is done, 
+and if any false value is found we must continue and we cannot be done. If it is found that al values in the finish
+array are true, that means all processes are finished, have been serviced by the system, the system is safe and a 
+final safe sequence has been determined. The algorithm in this instance can be terminated. However, no matter 
+what occurs in the loop as defined above, after every iteration/loop the counter integer is incremented, tracking 
+how many "checks" the system has done of the processes. If this counter reaches 20, that means no progress within 
+the algorithm is being made, and the system is unsafe and the loop will be broken but with the done variable still 
+set to false. 
+
+    After the algorithm loop is done, the results just need to be printed. If the done variable is true, that means
+the algorithm was broken because all processes are finished and a safe sequence was found. So this is stated and 
+the contents of the sequence array are printed as such. If the done variable is false, that means the algorithm was 
+broken due to no progress being made toward process servicing, the system state is unsafe, and there exists no 
+satisfying safe sequence. This is stated/printed, with no accompanying sequence data. 
+
+That is the full documentation of the implementation of this assignment. For further instruction
+specific comments, see code. 
